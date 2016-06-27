@@ -6,7 +6,4 @@ const config = {
   database_password: process.env.WEREWOLVES_DATABASE_PASSWORD
 }
 
-const parsed_config = Object.assign({}, config, require(`./${ENV}.js`))
-
-export default parsed_config
-
+export default Object.assign({}, config, require(`./${ENV}.js`))

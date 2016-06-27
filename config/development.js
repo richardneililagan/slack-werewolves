@@ -1,5 +1,7 @@
 const DEVELOPMENT_CONFIG = {
-  database_url: "ds023684.mlab.com:23684/slack-werewolves-development"
+  database_url: "mongodb://localhost:27017",
+  database_username: '',
+  database_password: ''
 }
 
 export default DEVELOPMENT_CONFIG
