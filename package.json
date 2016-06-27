@@ -1,0 +1,11 @@
+{
+  "name": "slack-werewolves",
+  "version": "0.0.1",
+  "description": "Play a game of Werewolves on your Slack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Richard Neil Ilagan <richardilagan@gmail.com>",
+  "license": "MIT"
+}
