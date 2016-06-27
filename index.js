@@ -2,4 +2,4 @@
  * Application entrypoint
  */
 require('babel-register')
-require('./app.js')
+require('./app.js').init()

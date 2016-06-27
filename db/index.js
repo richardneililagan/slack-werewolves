@@ -1,7 +1,11 @@
 const mongoose = require('mongoose')
 const config = require('../config')
 
-mongoose.connect(config.database_url)
+console.log(`Attempting connection to database [${ config.database_url }]...`)
+mongoose.connect(config.database_url, {
+  user: config.database_username,
+  pass: config.database_password
+})
 
 // :: lifecycle stuff
 const db = mongoose.connection
