@@ -2,6 +2,7 @@ const request = require('request-promise')
 const qs = require('querystring')
 
 const config = require('../../config')
+const Team = require('../../models/team.js')
 
 const Auth = {}
 
@@ -26,8 +27,6 @@ Auth.initiate = (_ => {
 Auth.receive_handshake = function * () {
   const handshake_code = this.request.query['code']
 
-  console.log(config.slack_client_id)
-
   yield request({
     method: 'POST',
     uri: 'https://slack.com/api/oauth.access',
@@ -38,10 +37,15 @@ Auth.receive_handshake = function * () {
     }
   })
   .then(responseBody => {
-    this.body = responseBody
+    const data = JSON.parse(responseBody)
+    Team.registerFromSlack(data)
+
+    this.body = 'Slack team registered successfully!'
   })
   .catch(err => {
     console.log(err)
+    this.status = 500
+    this.body = 'Error while registering with Slack.'
   })
 }
 

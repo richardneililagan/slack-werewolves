@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 const config = require('../config')
 
+// :: replace mongoose promise library with our native Promise implementation
+mongoose.Promise = global.Promise
+
 console.log(`Attempting connection to database [${ config.database_url }]...`)
 mongoose.connect(config.database_url, {
   user: config.database_username,
