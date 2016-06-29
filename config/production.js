@@ -1,4 +1,4 @@
 const PRODUCTION_CONFIG = {
 }
 
-expoert default PRODUCTION_CONFIG
+export default PRODUCTION_CONFIG
