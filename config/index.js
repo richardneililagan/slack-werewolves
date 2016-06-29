@@ -1,7 +1,7 @@
 const ENV = process.env.NODE_ENV || 'development'
 
 const config = {
-  port: process.env.WEREWOLVES_PORT || 8000,
+  port: process.env.PORT || 8000,
 
   database_url: "",
   database_username: process.env.WEREWOLVES_DATABASE_USERNAME,
